@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>4.Android App开发 · GitBook</title>
+        <title>7.1 gitbook配置使用 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="system.html" />
     
-    
-    <link rel="prev" href="../linux/config_1.html" />
+    <link rel="prev" href="tolls.html" />
     
 
     </head>
@@ -147,9 +145,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="app.html">
+        <li class="chapter " data-level="1.4" data-path="../android/app.html">
             
-                <a href="app.html">
+                <a href="../android/app.html">
             
                     
                     4.Android App开发
@@ -160,9 +158,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="system.html">
+        <li class="chapter " data-level="1.5" data-path="../android/system.html">
             
-                <a href="system.html">
+                <a href="../android/system.html">
             
                     
                     5.Android System开发
@@ -186,9 +184,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../tools/tolls.html">
+        <li class="chapter " data-level="1.7" data-path="tolls.html">
             
-                <a href="../tools/tolls.html">
+                <a href="tolls.html">
             
                     
                     7.常用工具配置
@@ -200,9 +198,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../tools/tools_1.html">
+        <li class="chapter active" data-level="1.7.1" data-path="tools_1.html">
             
-                <a href="../tools/tools_1.html">
+                <a href="tools_1.html">
             
                     
                     7.1 gitbook配置使用
@@ -248,7 +246,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >4.Android App开发</a>
+        <a href=".." >7.1 gitbook配置使用</a>
     </h1>
 </div>
 
@@ -263,7 +261,33 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="android-app&#x5F00;&#x53D1;">Android App&#x5F00;&#x53D1;</h1>
+                                <h1 id="71-gitbook&#x914D;&#x7F6E;&#x4F7F;&#x7528;">7.1 gitbook&#x914D;&#x7F6E;&#x4F7F;&#x7528;</h1>
+<h2 id="1-&#x5B89;&#x88C5;">1 &#x5B89;&#x88C5;</h2>
+<ul>
+<li>&#x73AF;&#x5883;:<br>  Ubuntu 16.04.5 LTS</li>
+<li>&#x5B89;&#x88C5;:<br>  sudo apt-get install npm<br>  sudo npm install -g gitbook-cli<br>  sudo apt-get install node<br>  sudo ln -s /usr/bin/nodejs /usr/bin/node</li>
+<li>&#x9A8C;&#x8BC1;:<br>  gitbook -V  <h2 id="2-&#x914D;&#x7F6E;">2 &#x914D;&#x7F6E;</h2>
+</li>
+<li>&#x521B;&#x5EFA;&#x4ED3;&#x5E93;:<br>  mkdir mybook  </li>
+<li>&#x7F16;&#x8F91;&#x76EE;&#x5F55;&#x6587;&#x4EF6;:<br>  vim SUMMARY.md<br>  &#x53C2;&#x8003;&#x914D;&#x7F6E;&#x5982;&#x4E0B;:   </li>
+</ul>
+<pre><code class="lang-markdown"><span class="hljs-section"># Summary</span>
+
+<span class="hljs-bullet">* </span>[<span class="hljs-string">1.&#x4ECB;&#x7ECD;</span>](<span class="hljs-link">README.md</span>)
+<span class="hljs-bullet">* </span>[<span class="hljs-string">2.inux&#x9A71;&#x52A8;</span>](<span class="hljs-link">linux/driver.md</span>)
+<span class="hljs-bullet">* </span>[<span class="hljs-string">3.Linux&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;</span>](<span class="hljs-link">linux/config.md</span>)
+<span class="hljs-code">    * [3.1 ssh&#x6B63;&#x5411;&#x65B9;&#x5411;&#x4EE3;&#x7406;](linux/config_1.md)</span>
+<span class="hljs-bullet">* </span>[<span class="hljs-string">4.Android App&#x5F00;&#x53D1;</span>](<span class="hljs-link">android/app.md</span>)
+<span class="hljs-bullet">* </span>[<span class="hljs-string">5.Android System&#x5F00;&#x53D1;</span>](<span class="hljs-link">android/system.md</span>)
+<span class="hljs-bullet">* </span>[<span class="hljs-string">6.&#x4EBA;&#x5DE5;&#x667A;&#x80FD;</span>](<span class="hljs-link">ai/ai.md</span>)
+<span class="hljs-bullet">* </span>[<span class="hljs-string">7.&#x5E38;&#x7528;&#x5DE5;&#x5177;&#x914D;&#x7F6E;</span>](<span class="hljs-link">tools/tolls.md</span>)
+<span class="hljs-code">    * [7.1 gitbook&#x914D;&#x7F6E;&#x4F7F;&#x7528;](tools/tools_1.md)</span>
+</code></pre>
+<ul>
+<li>&#x751F;&#x6210;&#x76F8;&#x5173;&#x6587;&#x4EF6;:<br>  gitbook init  </li>
+</ul>
+<h2 id="3-&#x53D1;&#x5E03;&#x5230;github-&#x548C;gitbook">3 &#x53D1;&#x5E03;&#x5230;github &#x548C;gitbook</h2>
+<p>git init<br>git add *<br>git commit -m &quot;inital mybook&quot;<br>git remote add origin git@github.com:zhoushiqian/mybook.git<br>git push -u origin master  </p>
 
                                 
                                 </section>
@@ -291,14 +315,10 @@
 
             
                 
-                <a href="../linux/config_1.html" class="navigation navigation-prev " aria-label="Previous page: 3.1 ssh正向方向代理">
+                <a href="tolls.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 7.常用工具配置">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="system.html" class="navigation navigation-next " aria-label="Next page: 5.Android System开发">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -307,7 +327,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.Android App开发","level":"1.4","depth":1,"next":{"title":"5.Android System开发","level":"1.5","depth":1,"path":"android/system.md","ref":"android/system.md","articles":[]},"previous":{"title":"3.1 ssh正向方向代理","level":"1.3.1","depth":2,"path":"linux/config_1.md","ref":"linux/config_1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/app.md","mtime":"2018-11-01T06:40:15.626Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-01T07:30:23.820Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.1 gitbook配置使用","level":"1.7.1","depth":2,"previous":{"title":"7.常用工具配置","level":"1.7","depth":1,"path":"tools/tolls.md","ref":"tools/tolls.md","articles":[{"title":"7.1 gitbook配置使用","level":"1.7.1","depth":2,"path":"tools/tools_1.md","ref":"tools/tools_1.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tools/tools_1.md","mtime":"2018-11-01T08:03:43.603Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-01T07:30:23.820Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

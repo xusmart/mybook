@@ -7,4 +7,6 @@
 * [4.Android App开发](android/app.md)
 * [5.Android System开发](android/system.md)
 * [6.人工智能](ai/ai.md)
+* [7.常用工具配置](tools/tolls.md)
+    * [7.1 gitbook配置使用](tools/tools_1.md)
 
