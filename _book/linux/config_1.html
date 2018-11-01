@@ -107,7 +107,7 @@
                 <a href="driver.html">
             
                     
-                    2.inux驱动
+                    2.Linux驱动
             
                 </a>
             
@@ -160,12 +160,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../android/system.html">
+        <li class="chapter " data-level="1.5" data-path="../android/driver.md">
+            
+                <span>
+            
+                    
+                    5.Android Driver开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../android/system.html">
             
                 <a href="../android/system.html">
             
                     
-                    5.Android System开发
+                    6.Android System开发
             
                 </a>
             
@@ -173,12 +186,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../ai/ai.html">
+        <li class="chapter " data-level="1.7" data-path="../ai/ai.html">
             
                 <a href="../ai/ai.html">
             
                     
-                    6.人工智能
+                    7.人工智能
             
                 </a>
             
@@ -186,12 +199,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../tools/tolls.html">
+        <li class="chapter " data-level="1.8" data-path="../tools/tolls.html">
             
                 <a href="../tools/tolls.html">
             
                     
-                    7.常用工具配置
+                    8.常用工具配置
             
                 </a>
             
@@ -200,7 +213,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../tools/tools_1.html">
+        <li class="chapter " data-level="1.8.1" data-path="../tools/tools_1.html">
             
                 <a href="../tools/tools_1.html">
             
@@ -263,9 +276,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="31-ssh&#x6B63;&#x5411;&#x65B9;&#x5411;&#x4EE3;&#x7406;">3.1 ssh&#x6B63;&#x5411;&#x65B9;&#x5411;&#x4EE3;&#x7406;</h1>
-<h2 id="1-&#x6B63;&#x5411;&#x4EE3;&#x7406;">1. &#x6B63;&#x5411;&#x4EE3;&#x7406;</h2>
+                                <h1 id="31-ssh&#x6B63;&#x5411;&#x53CD;&#x5411;&#x4EE3;&#x7406;">3.1 ssh&#x6B63;&#x5411;&#x53CD;&#x5411;&#x4EE3;&#x7406;</h1>
+<h2 id="1-&#x4EE3;&#x7406;&#x7684;&#x610F;&#x601D;">1. &#x4EE3;&#x7406;&#x7684;&#x610F;&#x601D;</h2>
+<ul>
+<li>&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x90FD;&#x662F;CS&#x7ED3;&#x6784;&#xFF0C;&#x6240;&#x8C13;&#x4EE3;&#x7406;&#xFF0C;&#x5C31;&#x662F;&#x5C06;CS&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x7684;&#x8D44;&#x6E90;&#x6620;&#x5C04;&#x5728;C&#x7AEF;&#x6216;&#x8005;S&#x7AEF;  </li>
+<li>C-&gt;S &#x6B63;&#x5411;&#x4EE3;&#x7406;  </li>
+<li>S-&gt;C &#x53CD;&#x5411;&#x4EE3;&#x7406;  <h2 id="1-&#x6B63;&#x5411;&#x4EE3;&#x7406;">1. &#x6B63;&#x5411;&#x4EE3;&#x7406;</h2>
+</li>
+<li>client local_client server remote_resource<br>client ssh &#x5BA2;&#x6237;&#x7AEF;<br>local_client &#x8981;&#x8BBF;&#x95EE;&#x8FDC;&#x7A0B;&#x8D44;&#x6E90;&#x7684;&#x4E3B;&#x673A;<br>server  ssh &#x670D;&#x52A1;&#x5668;<br>remote_resource &#x8981;&#x4EE3;&#x7406;&#x7684;&#x8D44;&#x6E90;  </li>
+<li>&#x8FDE;&#x63A5;<br>ssh -L client:bind_port:remote_resource:remote_resource_port user@server </li>
+</ul>
 <h2 id="2-&#x53CD;&#x5411;&#x4EE3;&#x7406;">2. &#x53CD;&#x5411;&#x4EE3;&#x7406;</h2>
+<ul>
+<li>local_resource client server remote_client
+local_resource &#x8981;&#x6620;&#x5C04;&#x5230;S&#x7AEF;&#x7684;&#x670D;&#x52A1;&#x5668;<br>client ssh &#x5BA2;&#x6237;&#x7AEF;<br>server ssh &#x670D;&#x52A1;&#x5668;
+remote_client S&#x7AEF;&#x5BA2;&#x6237;&#x7AEF;  </li>
+<li>&#x8FDE;&#x63A5;<br>ssh -R server:bind_port:local_resource:localport user@server  </li>
+</ul>
+<h2 id="3-&#x4F18;&#x7F3A;&#x70B9;">3. &#x4F18;&#x7F3A;&#x70B9;</h2>
+<ul>
+<li>&#x901F;&#x5EA6;&#x6BD4;&#x8F83;&#x6162;</li>
+<li>&#x90E8;&#x7F72;&#x65B9;&#x4FBF;</li>
+<li>&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x9700;&#x8981;&#x989D;&#x5916;&#x652F;&#x6301;</li>
+</ul>
 
                                 
                                 </section>
@@ -309,7 +342,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.1 ssh正向方向代理","level":"1.3.1","depth":2,"next":{"title":"4.Android App开发","level":"1.4","depth":1,"path":"android/app.md","ref":"android/app.md","articles":[]},"previous":{"title":"3.Linux系统配置","level":"1.3","depth":1,"path":"linux/config.md","ref":"linux/config.md","articles":[{"title":"3.1 ssh正向方向代理","level":"1.3.1","depth":2,"path":"linux/config_1.md","ref":"linux/config_1.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linux/config_1.md","mtime":"2018-11-01T06:51:55.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-01T08:18:38.352Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.1 ssh正向方向代理","level":"1.3.1","depth":2,"next":{"title":"4.Android App开发","level":"1.4","depth":1,"path":"android/app.md","ref":"android/app.md","articles":[]},"previous":{"title":"3.Linux系统配置","level":"1.3","depth":1,"path":"linux/config.md","ref":"linux/config.md","articles":[{"title":"3.1 ssh正向方向代理","level":"1.3.1","depth":2,"path":"linux/config_1.md","ref":"linux/config_1.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linux/config_1.md","mtime":"2018-11-01T09:37:05.443Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-01T09:35:28.340Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -317,6 +350,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
