@@ -38,3 +38,6 @@ git add *
 git commit -m "inital mybook"  
 git remote add origin git@github.com:zhoushiqian/mybook.git  
 git push -u origin master  
+
+将gitbook 和github 链接在一起
+gitbook->settings->integrations->github/mybook repositorie
