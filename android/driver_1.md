@@ -1,4 +1,4 @@
-# 5.1 usb host driver
+# 5.1 usb core device and driver
 ## 1.文件目录结构
 - 目录 drivers/usb/core
 
