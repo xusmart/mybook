@@ -1,0 +1,566 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5.2 usbfs driver · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-duotone-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="driver_3.html" />
+    
+    
+    <link rel="prev" href="driver_1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../linux/driver.html">
+            
+                <a href="../linux/driver.html">
+            
+                    
+                    2.Linux驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../linux/config.html">
+            
+                <a href="../linux/config.html">
+            
+                    
+                    3.Linux系统配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../linux/config_1.html">
+            
+                <a href="../linux/config_1.html">
+            
+                    
+                    3.1 ssh正向方向代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="app.html">
+            
+                <a href="app.html">
+            
+                    
+                    4.Android App开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="driver.html">
+            
+                <a href="driver.html">
+            
+                    
+                    5.Android Driver开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="driver_1.html">
+            
+                <a href="driver_1.html">
+            
+                    
+                    5.1 usb host driver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="driver_2.html">
+            
+                <a href="driver_2.html">
+            
+                    
+                    5.2 usbfs driver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="driver_3.html">
+            
+                <a href="driver_3.html">
+            
+                    
+                    5.2 usclass driver
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="system.html">
+            
+                <a href="system.html">
+            
+                    
+                    6.Android System开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ai/ai.html">
+            
+                <a href="../ai/ai.html">
+            
+                    
+                    7.人工智能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tools/tolls.html">
+            
+                <a href="../tools/tolls.html">
+            
+                    
+                    8.常用工具配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tools/tools_1.html">
+            
+                <a href="../tools/tools_1.html">
+            
+                    
+                    7.1 gitbook配置使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5.2 usbfs driver</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="51-usbfs-driver">5.1 usbfs driver</h1>
+<h2 id="1&#x4ECB;&#x7ECD;">1.&#x4ECB;&#x7ECD;</h2>
+<p>usbfs driver&#x4E3B;&#x8981;&#x662F;&#x5229;&#x7528;devio.c &#x63D0;&#x4F9B;&#x7684;io&#x63A5;&#x53E3;&#xFF0C;&#x5B9E;&#x73B0;&#x548C;usbcore&#x4EA4;&#x4E92;</p>
+<p>&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;usb configure interface claim urb &#x7B49;&#x64CD;&#x4F5C;</p>
+<h1 id="define-usbmajor-----------180">define USB_MAJOR           180</h1>
+<h1 id="define-usbdevicemajor--------189">define USB_DEVICE_MAJOR        189</h1>
+<p>usbfs &#x4F7F;&#x7528;&#x7684;&#x662F;<strong>USB_DEVICE_MAJOR</strong>&#x8FD9;&#x4E2A;&#x8981;&#x505A;&#x597D;&#x533A;&#x5206;&#xFF0C;&#x5B9E;&#x73B0;&#x5728;<strong><em>devio.c</em></strong></p>
+<p>USB_MAJOR &#x8FD9;&#x4E2A;&#x662F; usb class driver &#x4F7F;&#x7528;&#x7684;</p>
+<h2 id="2&#x6CE8;&#x518C;">2.&#x6CE8;&#x518C;</h2>
+<pre class="language-"><code class="lang-c"><span class="token keyword">int</span> __init <span class="token function">usb_devio_init</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> retval<span class="token punctuation">;</span>
+
+    retval <span class="token operator">=</span> <span class="token function">register_chrdev_region</span><span class="token punctuation">(</span>USB_DEVICE_DEV<span class="token punctuation">,</span> USB_DEVICE_MAX<span class="token punctuation">,</span>
+                    <span class="token string">&quot;usb_device&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">printk</span><span class="token punctuation">(</span>KERN_ERR <span class="token string">&quot;Unable to register minors for usb_device\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">goto</span> out<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>    
+    <span class="token function">cdev_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usb_device_cdev<span class="token punctuation">,</span> <span class="token operator">&amp;</span>usbdev_file_operations<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    retval <span class="token operator">=</span> <span class="token function">cdev_add</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usb_device_cdev<span class="token punctuation">,</span> USB_DEVICE_DEV<span class="token punctuation">,</span> USB_DEVICE_MAX<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">printk</span><span class="token punctuation">(</span>KERN_ERR <span class="token string">&quot;Unable to get usb_device major %d\n&quot;</span><span class="token punctuation">,</span>
+               USB_DEVICE_MAJOR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">goto</span> error_cdev<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+    <span class="token function">usb_register_notify</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usbdev_nb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+out<span class="token punctuation">:</span>
+    <span class="token keyword">return</span> retval<span class="token punctuation">;</span>
+
+error_cdev<span class="token punctuation">:</span>
+    <span class="token function">unregister_chrdev_region</span><span class="token punctuation">(</span>USB_DEVICE_DEV<span class="token punctuation">,</span> USB_DEVICE_MAX<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">goto</span> out<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="21-usbdevice-&#x6CE8;&#x518C;&#x5B57;&#x7B26;&#x8BBE;&#x5907;">2.1 usb_device &#x6CE8;&#x518C;&#x5B57;&#x7B26;&#x8BBE;&#x5907;</h3>
+<p>&#x5728;hub.c usb_new_device &#x8FD9;&#x91CC;&#x4F1A;&#x521B;&#x5EFA;&#x8BBE;&#x5907;&#x6587;&#x4EF6;,&#x901A;&#x8FC7;uevent&#x4E0A;&#x62A5;&#x65F6;&#x95F4;&#xFF0C;&#x7531;uventd &#x5728;/dev/&#x4E0B;&#x9762;&#x521B;&#x5EFA;&#x8BBE;&#x5907;&#x6587;&#x4EF6;</p>
+<pre class="language-"><code>
+    dev_dbg(&amp;udev-&gt;dev, &quot;udev %d, busnum %d, minor = %d\n&quot;,
+            udev-&gt;devnum, udev-&gt;bus-&gt;busnum,
+            (((udev-&gt;bus-&gt;busnum-1) * 128) + (udev-&gt;devnum-1)));
+    /* export the usbdev device-node for libusb */
+    udev-&gt;dev.devt = MKDEV(USB_DEVICE_MAJOR,
+            (((udev-&gt;bus-&gt;busnum-1) * 128) + (udev-&gt;devnum-1)));
+
+    /* Tell the world! */
+    announce_device(udev);
+
+    if (udev-&gt;serial)
+        add_device_randomness(udev-&gt;serial, strlen(udev-&gt;serial));
+    if (udev-&gt;product)
+        add_device_randomness(udev-&gt;product, strlen(udev-&gt;product));
+    if (udev-&gt;manufacturer)
+        add_device_randomness(udev-&gt;manufacturer,
+                      strlen(udev-&gt;manufacturer));
+
+    device_enable_async_suspend(&amp;udev-&gt;dev);
+
+    /* check whether the hub or firmware marks this port as non-removable */
+    if (udev-&gt;parent)
+        set_usb_port_removable(udev);
+
+    /* Register the device.  The device driver is responsible
+     * for configuring the device and invoking the add-device
+     * notifier chain (used by usbfs and possibly others).
+     */
+    err = device_add(&amp;udev-&gt;dev);
+</code></pre><h2 id="3&#x4F7F;&#x7528;">3.&#x4F7F;&#x7528;</h2>
+<pre class="language-"><code class="lang-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;ctype.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;dirent.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;errno.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;linux/usb/ch9.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;linux/usbdevice_fs.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;linux/version.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/ioctl.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/time.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+
+<span class="token macro property">#<span class="token directive keyword">define</span> USB_DEVICE &quot;/dev/bus/usb/001/003&quot;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> usb_fd<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> devdesc<span class="token punctuation">[</span><span class="token number">4096</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_device_descriptor<span class="token operator">*</span> device<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_config_descriptor<span class="token operator">*</span> config<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_interface_descriptor <span class="token operator">*</span>interface<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_endpoint_descriptor <span class="token operator">*</span>ep0<span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> bufptr <span class="token operator">=</span> devdesc<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">char</span><span class="token operator">*</span> bufend<span class="token punctuation">;</span>
+    size_t desclength<span class="token punctuation">;</span>
+
+    usb_fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>USB_DEVICE<span class="token punctuation">,</span> O_RDONLY <span class="token operator">|</span> O_CLOEXEC<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>usb_fd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;open %s failed!\n&quot;</span><span class="token punctuation">,</span> USB_DEVICE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+
+    desclength <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>usb_fd<span class="token punctuation">,</span> devdesc<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>devdesc<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>desclength <span class="token operator">&lt;</span> USB_DT_DEVICE_SIZE <span class="token operator">+</span> USB_DT_CONFIG_SIZE<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;desclength too small\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">goto</span> out<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+    device <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_device_descriptor<span class="token operator">*</span><span class="token punctuation">)</span>bufptr<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;vid %02x pid %02x\n&quot;</span><span class="token punctuation">,</span> device<span class="token operator">-&gt;</span>idVendor<span class="token punctuation">,</span> device<span class="token operator">-&gt;</span>idProduct<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+out<span class="token punctuation">:</span>    
+    <span class="token function">close</span><span class="token punctuation">(</span>usb_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="mailto:zhoushiqian@gmail.com" target="_blank">zhoushiqian@gmail.com</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2018-11-02 14:47:08 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="driver_1.html" class="navigation navigation-prev " aria-label="Previous page: 5.1 usb host driver">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="driver_3.html" class="navigation navigation-next " aria-label="Next page: 5.2 usclass driver">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.2 usbfs driver","level":"1.5.2","depth":2,"next":{"title":"5.2 usclass driver","level":"1.5.3","depth":2,"path":"android/driver_3.md","ref":"android/driver_3.md","articles":[]},"previous":{"title":"5.1 usb host driver","level":"1.5.1","depth":2,"path":"android/driver_1.md","ref":"android/driver_1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-disqus","sharing-plus","search-pro","page-footer-ex","donate","-highlight","prism","prism-themes"],"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-dark.css"]},"disqus":{"shortName":"introducetogitbook"},"page-footer-ex":{"copyright":"By <zhoushiqian@gmail.com>，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"Donate","title":"","wechat":"/images/wechat.png","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"prism-themes":{},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","qq","linkedin","qzone","douban"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/driver_2.md","mtime":"2018-11-02T06:47:08.973Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-02T06:59:01.735Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
