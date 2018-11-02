@@ -8,7 +8,7 @@
 * [5.Android Driver开发](android/driver.md)
     * [5.1 usb host driver](android/driver_1.md)
     * [5.2 usbfs driver](android/driver_2.md)
-    * [5.2 usclass driver](android/driver_3.md)
+    * [5.3 usclass driver](android/driver_3.md)
 * [6.Android System开发](android/system.md)
 * [7.人工智能](ai/ai.md)
 * [8.常用工具配置](tools/tolls.md)
