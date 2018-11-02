@@ -1,4 +1,4 @@
-# 5.2 usclass driver
+# 5.2 usb_class_driver
 
 ## 1.介绍
 
