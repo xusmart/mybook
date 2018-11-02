@@ -1,9 +1,13 @@
 {
-    "plugins": ["-disqus", 
+    "plugins": [
+	"-disqus", 
 	"sharing-plus",
 	"search-pro",
 	"page-footer-ex",
-	"donate"
+	"donate",
+	"-highlight",
+	"prism",
+	"prism-themes"
 	],
     "pluginsConfig": {
         "disqus": {
@@ -43,6 +47,11 @@
           "wechat": "/images/wechat.png",
           "button": "Donate",
           "wechatText": "微信捐赠"
-        }       		
+        },
+		"prism": {
+			"css": [
+				"prism-themes/themes/prism-duotone-dark.css"
+			]
+		}		
     }
 }

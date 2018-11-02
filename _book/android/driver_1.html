@@ -1,0 +1,947 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5.1 usb host driver · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-duotone-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="system.html" />
+    
+    
+    <link rel="prev" href="driver.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../linux/driver.html">
+            
+                <a href="../linux/driver.html">
+            
+                    
+                    2.Linux驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../linux/config.html">
+            
+                <a href="../linux/config.html">
+            
+                    
+                    3.Linux系统配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../linux/config_1.html">
+            
+                <a href="../linux/config_1.html">
+            
+                    
+                    3.1 ssh正向方向代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="app.html">
+            
+                <a href="app.html">
+            
+                    
+                    4.Android App开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="driver.html">
+            
+                <a href="driver.html">
+            
+                    
+                    5.Android Driver开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="driver_1.html">
+            
+                <a href="driver_1.html">
+            
+                    
+                    5.1 usb host driver
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="system.html">
+            
+                <a href="system.html">
+            
+                    
+                    6.Android System开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ai/ai.html">
+            
+                <a href="../ai/ai.html">
+            
+                    
+                    7.人工智能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tools/tolls.html">
+            
+                <a href="../tools/tolls.html">
+            
+                    
+                    8.常用工具配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tools/tools_1.html">
+            
+                <a href="../tools/tools_1.html">
+            
+                    
+                    7.1 gitbook配置使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5.1 usb host driver</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="51-usb-host-driver">5.1 usb host driver</h1>
+<h2 id="1&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;">1.&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h2>
+<ul>
+<li><p>&#x76EE;&#x5F55; drivers/usb/core</p>
+</li>
+<li><p>&#x529F;&#x80FD; usb-core usb&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x5B9E;&#x73B0;  </p>
+<p>hcd.c &#x63A7;&#x5236;&#x5668;</p>
+<p>hub.c hub&#x529F;&#x80FD;&#x5B9E;&#x73B0;</p>
+<p>message.c usb &#x679A;&#x4E3E;&#x76F8;&#x5173;</p>
+<p>devio.c usb userspace &#x5229;&#x7528;io&#x63A5;&#x53E3; &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5177;&#x4F53;&#x7684;usbdriver&#x7684;&#x529F;&#x80FD;</p>
+<p>usb.c usb device &#x521B;&#x5EFA;&#x76F8;&#x5173;</p>
+</li>
+</ul>
+<h2 id="2&#x6838;&#x5FC3;&#x6570;&#x636E;&#x7ED3;&#x6784;">2.&#x6838;&#x5FC3;&#x6570;&#x636E;&#x7ED3;&#x6784;</h2>
+<h3 id="21-usbdevice">2.1 usb_device</h3>
+<p>&#x63CF;&#x8FF0;usb &#x8BBE;&#x5907;&#xFF0C;&#x548C;&#x8BBE;&#x5907;&#x6253;&#x4EA4;&#x9053;&#xFF0C;&#x548C;usb_device_driver &#x7ED1;&#x5B9A;</p>
+<pre class="language-"><code class="lang-c"><span class="token keyword">struct</span> usb_device <span class="token punctuation">{</span>
+    <span class="token keyword">int</span>        devnum<span class="token punctuation">;</span> <span class="token comment">//&#x8BBE;&#x5907;&#x53F7;</span>
+    <span class="token keyword">char</span>        devpath<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    u32        route<span class="token punctuation">;</span>
+    <span class="token keyword">enum</span> usb_device_state    state<span class="token punctuation">;</span>
+    <span class="token keyword">enum</span> usb_device_speed    speed<span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> usb_tt    <span class="token operator">*</span>tt<span class="token punctuation">;</span>
+    <span class="token keyword">int</span>        ttport<span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> toggle<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> usb_device <span class="token operator">*</span>parent<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_bus <span class="token operator">*</span>bus<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_host_endpoint ep0<span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> device dev<span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> usb_device_descriptor descriptor<span class="token punctuation">;</span><span class="token comment">//&#x8BBE;&#x5907;&#x63CF;&#x8FF0;&#x7B26;</span>
+    <span class="token keyword">struct</span> usb_host_bos <span class="token operator">*</span>bos<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_host_config <span class="token operator">*</span>config<span class="token punctuation">;</span><span class="token comment">//&#x8BBE;&#x5907;&#x914D;&#x7F6E;</span>
+
+    <span class="token keyword">struct</span> usb_host_config <span class="token operator">*</span>actconfig<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_host_endpoint <span class="token operator">*</span>ep_in<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//&#x8BBE;&#x5907;&#x7AEF;&#x70B9;</span>
+    <span class="token keyword">struct</span> usb_host_endpoint <span class="token operator">*</span>ep_out<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>rawdescriptors<span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">short</span> bus_mA<span class="token punctuation">;</span>
+    u8 portnum<span class="token punctuation">;</span>
+    u8 level<span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> can_submit<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> persist_enabled<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> have_langid<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> authorized<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> authenticated<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> wusb<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> lpm_capable<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> usb2_hw_lpm_capable<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> usb2_hw_lpm_besl_capable<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> usb2_hw_lpm_enabled<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> usb2_hw_lpm_allowed<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> usb3_lpm_enabled<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> usb3_lpm_u1_enabled<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> usb3_lpm_u2_enabled<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> string_langid<span class="token punctuation">;</span>
+
+    <span class="token comment">/* static strings from the device */</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>product<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>manufacturer<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>serial<span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> list_head filelist<span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> maxchild<span class="token punctuation">;</span>
+
+    u32 quirks<span class="token punctuation">;</span>
+    atomic_t urbnum<span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">long</span> active_duration<span class="token punctuation">;</span>
+
+<span class="token macro property">#<span class="token directive keyword">ifdef</span> CONFIG_PM</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">long</span> connect_time<span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> do_remote_wakeup<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> reset_resume<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> port_is_suspended<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    <span class="token keyword">struct</span> wusb_dev <span class="token operator">*</span>wusb_dev<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> slot_id<span class="token punctuation">;</span>
+    <span class="token keyword">enum</span> usb_device_removable removable<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb2_lpm_parameters l1_params<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb3_lpm_parameters u1_params<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb3_lpm_parameters u2_params<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> lpm_disable_count<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-"><code class="lang-c"><span class="token keyword">struct</span> usb_device_driver <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>probe<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_device <span class="token operator">*</span>udev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token operator">*</span>disconnect<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_device <span class="token operator">*</span>udev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>suspend<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_device <span class="token operator">*</span>udev<span class="token punctuation">,</span> pm_message_t message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>resume<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_device <span class="token operator">*</span>udev<span class="token punctuation">,</span> pm_message_t message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usbdrv_wrap drvwrap<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> supports_autosuspend<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="22-usbinterface">2.2 usb_interface</h3>
+<p>usb&#x7684;function device&#xFF0C;&#x548C;function driver &#x5373;usb_driver &#x7ED1;&#x5B9A;</p>
+<pre class="language-"><code class="lang-c"><span class="token keyword">struct</span> usb_interface <span class="token punctuation">{</span>
+    <span class="token comment">/* array of alternate settings for this interface,
+     * stored in no particular order */</span>
+    <span class="token keyword">struct</span> usb_host_interface <span class="token operator">*</span>altsetting<span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> usb_host_interface <span class="token operator">*</span>cur_altsetting<span class="token punctuation">;</span>    <span class="token comment">/* the currently
+                     * active alternate setting */</span>
+    <span class="token keyword">unsigned</span> num_altsetting<span class="token punctuation">;</span>    <span class="token comment">/* number of alternate settings */</span>
+
+    <span class="token comment">/* If there is an interface association descriptor then it will list
+     * the associated interfaces */</span>
+    <span class="token keyword">struct</span> usb_interface_assoc_descriptor <span class="token operator">*</span>intf_assoc<span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> minor<span class="token punctuation">;</span>            <span class="token comment">/* minor number this interface is
+                     * bound to */</span>
+    <span class="token keyword">enum</span> usb_interface_condition condition<span class="token punctuation">;</span>        <span class="token comment">/* state of binding */</span>
+    <span class="token keyword">unsigned</span> sysfs_files_created<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment">/* the sysfs attributes exist */</span>
+    <span class="token keyword">unsigned</span> ep_devs_created<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment">/* endpoint &quot;devices&quot; exist */</span>
+    <span class="token keyword">unsigned</span> unregistering<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment">/* unregistration is in progress */</span>
+    <span class="token keyword">unsigned</span> needs_remote_wakeup<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment">/* driver requires remote wakeup */</span>
+    <span class="token keyword">unsigned</span> needs_altsetting0<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment">/* switch to altsetting 0 is pending */</span>
+    <span class="token keyword">unsigned</span> needs_binding<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment">/* needs delayed unbind/rebind */</span>
+    <span class="token keyword">unsigned</span> resetting_device<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>    <span class="token comment">/* true: bandwidth alloc after reset */</span>
+    <span class="token keyword">unsigned</span> authorized<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>        <span class="token comment">/* used for interface authorization */</span>
+
+    <span class="token keyword">struct</span> device dev<span class="token punctuation">;</span>        <span class="token comment">/* interface specific device info */</span>
+    <span class="token keyword">struct</span> device <span class="token operator">*</span>usb_dev<span class="token punctuation">;</span>
+    atomic_t pm_usage_cnt<span class="token punctuation">;</span>        <span class="token comment">/* usage counter for autosuspend */</span>
+    <span class="token keyword">struct</span> work_struct reset_ws<span class="token punctuation">;</span>    <span class="token comment">/* for resets in atomic context */</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> usb_driver <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>probe<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_interface <span class="token operator">*</span>intf<span class="token punctuation">,</span>
+              <span class="token keyword">const</span> <span class="token keyword">struct</span> usb_device_id <span class="token operator">*</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token operator">*</span>disconnect<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_interface <span class="token operator">*</span>intf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>unlocked_ioctl<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_interface <span class="token operator">*</span>intf<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> code<span class="token punctuation">,</span>
+            <span class="token keyword">void</span> <span class="token operator">*</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>suspend<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_interface <span class="token operator">*</span>intf<span class="token punctuation">,</span> pm_message_t message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>resume<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> usb_interface <span class="token operator">*</span>intf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>reset_resume<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">struct</span> usb_interface <span class="token operator">*</span>intf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>pre_reset<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">struct</span> usb_interface <span class="token operator">*</span>intf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>post_reset<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">struct</span> usb_interface <span class="token operator">*</span>intf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> <span class="token keyword">struct</span> usb_device_id <span class="token operator">*</span>id_table<span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> usb_dynids dynids<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usbdrv_wrap drvwrap<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> no_dynamic_id<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> supports_autosuspend<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> disable_hub_initiated_lpm<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> soft_unbind<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="3&#x9A71;&#x52A8;&#x6CE8;&#x518C;">3.&#x9A71;&#x52A8;&#x6CE8;&#x518C;</h2>
+<h3 id="31-usb-&#x603B;&#x7EBF;&#x6CE8;&#x518C;">3.1 usb &#x603B;&#x7EBF;&#x6CE8;&#x518C;</h3>
+<pre class="language-"><code class="lang-c">driver<span class="token punctuation">.</span>c
+<span class="token keyword">struct</span> bus_type usb_bus_type <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span>name <span class="token operator">=</span>        <span class="token string">&quot;usb&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span>match <span class="token operator">=</span>    usb_device_match<span class="token punctuation">,</span>
+    <span class="token punctuation">.</span>uevent <span class="token operator">=</span>    usb_uevent<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+usb<span class="token punctuation">.</span>c
+<span class="token keyword">static</span> <span class="token keyword">int</span> __init <span class="token function">usb_init</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> retval<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">usb_disabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">pr_info</span><span class="token punctuation">(</span><span class="token string">&quot;%s: USB support disabled\n&quot;</span><span class="token punctuation">,</span> usbcore_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">usb_init_pool_max</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    retval <span class="token operator">=</span> <span class="token function">usb_debugfs_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> out<span class="token punctuation">;</span>
+
+    <span class="token function">usb_acpi_register</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    retval <span class="token operator">=</span> <span class="token function">bus_register</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usb_bus_type<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x6CE8;&#x518C;usb&#x603B;&#x7EBF;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> bus_register_failed<span class="token punctuation">;</span>
+    retval <span class="token operator">=</span> <span class="token function">bus_register_notifier</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usb_bus_type<span class="token punctuation">,</span> <span class="token operator">&amp;</span>usb_bus_nb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> bus_notifier_failed<span class="token punctuation">;</span>
+    retval <span class="token operator">=</span> <span class="token function">usb_major_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> major_init_failed<span class="token punctuation">;</span>
+    retval <span class="token operator">=</span> <span class="token function">usb_register</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usbfs_driver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> driver_register_failed<span class="token punctuation">;</span>
+    retval <span class="token operator">=</span> <span class="token function">usb_devio_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> usb_devio_init_failed<span class="token punctuation">;</span>
+    retval <span class="token operator">=</span> <span class="token function">usb_hub_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> hub_init_failed<span class="token punctuation">;</span>
+    retval <span class="token operator">=</span> <span class="token function">usb_register_device_driver</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usb_generic_driver<span class="token punctuation">,</span> THIS_MODULE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x6CE8;&#x518C;usb_device_driver</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> out<span class="token punctuation">;</span>
+
+    <span class="token function">usb_hub_cleanup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hub_init_failed<span class="token punctuation">:</span>
+    <span class="token function">usb_devio_cleanup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+usb_devio_init_failed<span class="token punctuation">:</span>
+    <span class="token function">usb_deregister</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usbfs_driver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+driver_register_failed<span class="token punctuation">:</span>
+    <span class="token function">usb_major_cleanup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+major_init_failed<span class="token punctuation">:</span>
+    <span class="token function">bus_unregister_notifier</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usb_bus_type<span class="token punctuation">,</span> <span class="token operator">&amp;</span>usb_bus_nb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+bus_notifier_failed<span class="token punctuation">:</span>
+    <span class="token function">bus_unregister</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>usb_bus_type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+bus_register_failed<span class="token punctuation">:</span>
+    <span class="token function">usb_acpi_unregister</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">usb_debugfs_cleanup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+out<span class="token punctuation">:</span>
+    <span class="token keyword">return</span> retval<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+usb_device&#x8BBE;&#x5907;&#x662F;&#x901A;&#x8FC7;device_add &#x6CE8;&#x518C;&#x5230;usb &#x603B;&#x7EBF;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;usb_device_match
+</code></pre>
+<h3 id="32-usbdevice-&#x6CE8;&#x518C;">3.2 usb_device &#x6CE8;&#x518C;</h3>
+<p><strong><em>usb.c</em></strong> <strong>usb_alloc_dev</strong>  &#x521D;&#x59CB;&#x5316;&#x8BBE;&#x5907;</p>
+<pre class="language-"><code class="lang-c"><span class="token keyword">struct</span> usb_device <span class="token operator">*</span><span class="token function">usb_alloc_dev</span><span class="token punctuation">(</span><span class="token keyword">struct</span> usb_device <span class="token operator">*</span>parent<span class="token punctuation">,</span>
+                 <span class="token keyword">struct</span> usb_bus <span class="token operator">*</span>bus<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> port1<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> usb_device <span class="token operator">*</span>dev<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_hcd <span class="token operator">*</span>usb_hcd <span class="token operator">=</span> <span class="token function">bus_to_hcd</span><span class="token punctuation">(</span>bus<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> root_hub <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    dev <span class="token operator">=</span> <span class="token function">kzalloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token operator">*</span>dev<span class="token punctuation">)</span><span class="token punctuation">,</span> GFP_KERNEL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>dev<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">usb_get_hcd</span><span class="token punctuation">(</span>usb_hcd<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">kfree</span><span class="token punctuation">(</span>dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">/* Root hubs aren&apos;t true devices, so don&apos;t allocate HCD resources */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>usb_hcd<span class="token operator">-&gt;</span>driver<span class="token operator">-&gt;</span>alloc_dev <span class="token operator">&amp;&amp;</span> parent <span class="token operator">&amp;&amp;</span>
+        <span class="token operator">!</span>usb_hcd<span class="token operator">-&gt;</span>driver<span class="token operator">-&gt;</span><span class="token function">alloc_dev</span><span class="token punctuation">(</span>usb_hcd<span class="token punctuation">,</span> dev<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">usb_put_hcd</span><span class="token punctuation">(</span><span class="token function">bus_to_hcd</span><span class="token punctuation">(</span>bus<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">kfree</span><span class="token punctuation">(</span>dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">device_initialize</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>bus <span class="token operator">=</span> <span class="token operator">&amp;</span>usb_bus_type<span class="token punctuation">;</span> <span class="token comment">//&#x6CE8;&#x518C;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x603B;&#x7EBF;</span>
+    dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token operator">&amp;</span>usb_device_type<span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>groups <span class="token operator">=</span> usb_device_groups<span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>dma_mask <span class="token operator">=</span> bus<span class="token operator">-&gt;</span>controller<span class="token operator">-&gt;</span>dma_mask<span class="token punctuation">;</span>
+    <span class="token function">set_dev_node</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token function">dev_to_node</span><span class="token punctuation">(</span>bus<span class="token operator">-&gt;</span>controller<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>state <span class="token operator">=</span> USB_STATE_ATTACHED<span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>lpm_disable_count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">atomic_set</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>urbnum<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">INIT_LIST_HEAD</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>ep0<span class="token punctuation">.</span>urb_list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>ep0<span class="token punctuation">.</span>desc<span class="token punctuation">.</span>bLength <span class="token operator">=</span> USB_DT_ENDPOINT_SIZE<span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>ep0<span class="token punctuation">.</span>desc<span class="token punctuation">.</span>bDescriptorType <span class="token operator">=</span> USB_DT_ENDPOINT<span class="token punctuation">;</span>
+    <span class="token comment">/* ep0 maxpacket comes later, from device descriptor */</span>
+    <span class="token function">usb_enable_endpoint</span><span class="token punctuation">(</span>dev<span class="token punctuation">,</span> <span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>ep0<span class="token punctuation">,</span> false<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>can_submit <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* Save readable and stable topology id, distinguishing devices
+     * by location for diagnostics, tools, driver model, etc.  The
+     * string is a path along hub ports, from the root.  Each device&apos;s
+     * dev-&gt;devpath will be stable until USB is re-cabled, and hubs
+     * are often labeled with these port numbers.  The name isn&apos;t
+     * as stable:  bus-&gt;busnum changes easily from modprobe order,
+     * cardbus or pci hotplugging, and so on.
+     */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">unlikely</span><span class="token punctuation">(</span><span class="token operator">!</span>parent<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        dev<span class="token operator">-&gt;</span>devpath<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">;</span>
+        dev<span class="token operator">-&gt;</span>route <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+        dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>parent <span class="token operator">=</span> bus<span class="token operator">-&gt;</span>controller<span class="token punctuation">;</span>
+        <span class="token function">dev_set_name</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;usb%d&quot;</span><span class="token punctuation">,</span> bus<span class="token operator">-&gt;</span>busnum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        root_hub <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">/* match any labeling on the hubs; it&apos;s one-based */</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>parent<span class="token operator">-&gt;</span>devpath<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">snprintf</span><span class="token punctuation">(</span>dev<span class="token operator">-&gt;</span>devpath<span class="token punctuation">,</span> <span class="token keyword">sizeof</span> dev<span class="token operator">-&gt;</span>devpath<span class="token punctuation">,</span>
+                <span class="token string">&quot;%d&quot;</span><span class="token punctuation">,</span> port1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">/* Root ports are not counted in route string */</span>
+            dev<span class="token operator">-&gt;</span>route <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">snprintf</span><span class="token punctuation">(</span>dev<span class="token operator">-&gt;</span>devpath<span class="token punctuation">,</span> <span class="token keyword">sizeof</span> dev<span class="token operator">-&gt;</span>devpath<span class="token punctuation">,</span>
+                <span class="token string">&quot;%s.%d&quot;</span><span class="token punctuation">,</span> parent<span class="token operator">-&gt;</span>devpath<span class="token punctuation">,</span> port1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">/* Route string assumes hubs have less than 16 ports */</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>port1 <span class="token operator">&lt;</span> <span class="token number">15</span><span class="token punctuation">)</span>
+                dev<span class="token operator">-&gt;</span>route <span class="token operator">=</span> parent<span class="token operator">-&gt;</span>route <span class="token operator">+</span>
+                    <span class="token punctuation">(</span>port1 <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>parent<span class="token operator">-&gt;</span>level <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span>
+                dev<span class="token operator">-&gt;</span>route <span class="token operator">=</span> parent<span class="token operator">-&gt;</span>route <span class="token operator">+</span>
+                    <span class="token punctuation">(</span><span class="token number">15</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>parent<span class="token operator">-&gt;</span>level <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>parent <span class="token operator">=</span> <span class="token operator">&amp;</span>parent<span class="token operator">-&gt;</span>dev<span class="token punctuation">;</span>
+        <span class="token function">dev_set_name</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;%d-%s&quot;</span><span class="token punctuation">,</span> bus<span class="token operator">-&gt;</span>busnum<span class="token punctuation">,</span> dev<span class="token operator">-&gt;</span>devpath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/* hub driver sets up TT records */</span>
+    <span class="token punctuation">}</span>
+
+    dev<span class="token operator">-&gt;</span>portnum <span class="token operator">=</span> port1<span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>bus <span class="token operator">=</span> bus<span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>parent <span class="token operator">=</span> parent<span class="token punctuation">;</span>
+    <span class="token function">INIT_LIST_HEAD</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>filelist<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token macro property">#<span class="token directive keyword">ifdef</span>    CONFIG_PM</span>
+    <span class="token function">pm_runtime_set_autosuspend_delay</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span>
+            usb_autosuspend_delay <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>connect_time <span class="token operator">=</span> jiffies<span class="token punctuation">;</span>
+    dev<span class="token operator">-&gt;</span>active_duration <span class="token operator">=</span> <span class="token operator">-</span>jiffies<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root_hub<span class="token punctuation">)</span>    <span class="token comment">/* Root hub always ok [and always wired] */</span>
+        dev<span class="token operator">-&gt;</span>authorized <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        dev<span class="token operator">-&gt;</span>authorized <span class="token operator">=</span> <span class="token operator">!</span><span class="token operator">!</span><span class="token function">HCD_DEV_AUTHORIZED</span><span class="token punctuation">(</span>usb_hcd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dev<span class="token operator">-&gt;</span>wusb <span class="token operator">=</span> <span class="token function">usb_bus_is_wusb</span><span class="token punctuation">(</span>bus<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> dev<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>hub.c usb_new_device &#x8C03;&#x7528; device_add(&amp;udev-&gt;dev);</p>
+<h3 id="33-usbinterface&#x63A5;&#x53E3;&#x6CE8;&#x518C;">3.3 usb_interface&#x63A5;&#x53E3;&#x6CE8;&#x518C;</h3>
+<p>message.c</p>
+<p>usb_set_configuration</p>
+<pre class="language-"><code class="lang-c">        intf<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>parent <span class="token operator">=</span> <span class="token operator">&amp;</span>dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">;</span>
+        intf<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>driver <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        intf<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>bus <span class="token operator">=</span> <span class="token operator">&amp;</span>usb_bus_type<span class="token punctuation">;</span>
+        intf<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token operator">&amp;</span>usb_if_device_type<span class="token punctuation">;</span>
+        intf<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>groups <span class="token operator">=</span> usb_interface_groups<span class="token punctuation">;</span>
+        intf<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>dma_mask <span class="token operator">=</span> dev<span class="token operator">-&gt;</span>dev<span class="token punctuation">.</span>dma_mask<span class="token punctuation">;</span>
+
+
+        ret <span class="token operator">=</span> <span class="token function">device_add</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>intf<span class="token operator">-&gt;</span>dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="34-&#x5339;&#x914D;">3.4 &#x5339;&#x914D;</h3>
+<pre class="language-"><code class="lang-c"><span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">usb_device_match</span><span class="token punctuation">(</span><span class="token keyword">struct</span> device <span class="token operator">*</span>dev<span class="token punctuation">,</span> <span class="token keyword">struct</span> device_driver <span class="token operator">*</span>drv<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">/* devices and interfaces are handled separately */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">is_usb_device</span><span class="token punctuation">(</span>dev<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment">/* interface drivers never match devices */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">is_usb_device_driver</span><span class="token punctuation">(</span>drv<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* TODO: Add real matching code */</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">is_usb_interface</span><span class="token punctuation">(</span>dev<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> usb_interface <span class="token operator">*</span>intf<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_driver <span class="token operator">*</span>usb_drv<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">struct</span> usb_device_id <span class="token operator">*</span>id<span class="token punctuation">;</span> 
+
+    <span class="token comment">/* device drivers never match interfaces */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">is_usb_device_driver</span><span class="token punctuation">(</span>drv<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    intf <span class="token operator">=</span> <span class="token function">to_usb_interface</span><span class="token punctuation">(</span>dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    usb_drv <span class="token operator">=</span> <span class="token function">to_usb_driver</span><span class="token punctuation">(</span>drv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    id <span class="token operator">=</span> <span class="token function">usb_match_id</span><span class="token punctuation">(</span>intf<span class="token punctuation">,</span> usb_drv<span class="token operator">-&gt;</span>id_table<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> 
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    id <span class="token operator">=</span> <span class="token function">usb_match_dynamic_id</span><span class="token punctuation">(</span>intf<span class="token punctuation">,</span> usb_drv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> 
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>    
+
+<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="35--&#x6267;&#x884C;&#x8BBE;&#x5907;&#x9A71;&#x52A8;probe">3.5  &#x6267;&#x884C;&#x8BBE;&#x5907;&#x9A71;&#x52A8;probe</h3>
+<pre class="language-"><code class="lang-c"><span class="token keyword">struct</span> usb_device_driver usb_generic_driver <span class="token operator">=</span> <span class="token punctuation">{</span> 
+    <span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;usb&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span>probe <span class="token operator">=</span> generic_probe<span class="token punctuation">,</span>
+    <span class="token punctuation">.</span>disconnect <span class="token operator">=</span> generic_disconnect<span class="token punctuation">,</span>
+<span class="token macro property">#<span class="token directive keyword">ifdef</span>  CONFIG_PM</span>
+    <span class="token punctuation">.</span>suspend <span class="token operator">=</span> generic_suspend<span class="token punctuation">,</span>
+    <span class="token punctuation">.</span>resume <span class="token operator">=</span> generic_resume<span class="token punctuation">,</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    <span class="token punctuation">.</span>supports_autosuspend <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+&#x6CE8;&#x518C;usb_device_driver
+<span class="token keyword">int</span> <span class="token function">usb_register_device_driver</span><span class="token punctuation">(</span><span class="token keyword">struct</span> usb_device_driver <span class="token operator">*</span>new_udriver<span class="token punctuation">,</span>
+        <span class="token keyword">struct</span> module <span class="token operator">*</span>owner<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> retval <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">usb_disabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span>ENODEV<span class="token punctuation">;</span>
+
+    new_udriver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>for_devices <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> 
+    new_udriver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>name <span class="token operator">=</span> new_udriver<span class="token operator">-&gt;</span>name<span class="token punctuation">;</span>
+    new_udriver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>bus <span class="token operator">=</span> <span class="token operator">&amp;</span>usb_bus_type<span class="token punctuation">;</span>
+    new_udriver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>probe <span class="token operator">=</span> usb_probe_device<span class="token punctuation">;</span>
+    new_udriver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>remove <span class="token operator">=</span> usb_unbind_device<span class="token punctuation">;</span>
+    new_udriver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>owner <span class="token operator">=</span> owner<span class="token punctuation">;</span>
+
+    retval <span class="token operator">=</span> <span class="token function">driver_register</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>new_udriver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>retval<span class="token punctuation">)</span>
+        <span class="token function">pr_info</span><span class="token punctuation">(</span><span class="token string">&quot;%s: registered new device driver %s\n&quot;</span><span class="token punctuation">,</span>
+            usbcore_name<span class="token punctuation">,</span> new_udriver<span class="token operator">-&gt;</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> 
+        <span class="token function">printk</span><span class="token punctuation">(</span>KERN_ERR <span class="token string">&quot;%s: error %d registering device &quot;</span>
+            <span class="token string">&quot;   driver %s\n&quot;</span><span class="token punctuation">,</span>
+            usbcore_name<span class="token punctuation">,</span> retval<span class="token punctuation">,</span> new_udriver<span class="token operator">-&gt;</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> retval<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">usb_probe_device</span><span class="token punctuation">(</span><span class="token keyword">struct</span> device <span class="token operator">*</span>dev<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> usb_device_driver <span class="token operator">*</span>udriver <span class="token operator">=</span> <span class="token function">to_usb_device_driver</span><span class="token punctuation">(</span>dev<span class="token operator">-&gt;</span>driver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> usb_device <span class="token operator">*</span>udev <span class="token operator">=</span> <span class="token function">to_usb_device</span><span class="token punctuation">(</span>dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> error <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token function">dev_dbg</span><span class="token punctuation">(</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;%s\n&quot;</span><span class="token punctuation">,</span> <span class="token constant">__func__</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* TODO: Add real matching code */</span>
+
+    <span class="token comment">/* The device should always appear to be in use
+     * unless the driver supports autosuspend.
+     */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>udriver<span class="token operator">-&gt;</span>supports_autosuspend<span class="token punctuation">)</span>
+        error <span class="token operator">=</span> <span class="token function">usb_autoresume_device</span><span class="token punctuation">(</span>udev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>error<span class="token punctuation">)</span>
+        error <span class="token operator">=</span> udriver<span class="token operator">-&gt;</span><span class="token function">probe</span><span class="token punctuation">(</span>udev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> error<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x86EE;&#x5173;&#x952E;&#xFF0C;&#x8FDB;&#x884C;usb &#x8BBE;&#x5907;&#x7684;&#x914D;&#x7F6E;
+<span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">generic_probe</span><span class="token punctuation">(</span><span class="token keyword">struct</span> usb_device <span class="token operator">*</span>udev<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> err<span class="token punctuation">,</span> c<span class="token punctuation">;</span>
+
+    <span class="token comment">/* Choose and set the configuration.  This registers the interfaces
+     * with the driver core and lets interface drivers bind to them.
+     */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>udev<span class="token operator">-&gt;</span>authorized <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">dev_err</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>udev<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;Device is not authorized for usage\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        c <span class="token operator">=</span> <span class="token function">usb_choose_configuration</span><span class="token punctuation">(</span>udev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            err <span class="token operator">=</span> <span class="token function">usb_set_configuration</span><span class="token punctuation">(</span>udev<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>err <span class="token operator">&amp;&amp;</span> err <span class="token operator">!=</span> <span class="token operator">-</span>ENODEV<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">dev_err</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>udev<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;can&apos;t set config #%d, error %d\n&quot;</span><span class="token punctuation">,</span>
+                    c<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">/* This need not be fatal.  The user can try to
+                 * set other configurations. */</span>
+            <span class="token punctuation">}</span>   
+        <span class="token punctuation">}</span>   
+    <span class="token punctuation">}</span>   
+    <span class="token comment">/* USB device state == configured ... usable */</span>
+    <span class="token function">usb_notify_add_device</span><span class="token punctuation">(</span>udev<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="36-&#x6267;&#x884C;function-driver-&#x9A71;&#x52A8;-probe">3.6 &#x6267;&#x884C;function driver &#x9A71;&#x52A8; probe</h3>
+<pre class="language-"><code class="lang-c">&#x6CE8;&#x518C;usb_driver
+<span class="token keyword">int</span> <span class="token function">usb_register_driver</span><span class="token punctuation">(</span><span class="token keyword">struct</span> usb_driver <span class="token operator">*</span>new_driver<span class="token punctuation">,</span> <span class="token keyword">struct</span> module <span class="token operator">*</span>owner<span class="token punctuation">,</span>
+            <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>mod_name<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> retval <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">usb_disabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span>ENODEV<span class="token punctuation">;</span>
+
+    new_driver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>for_devices <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+    new_driver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>name <span class="token operator">=</span> new_driver<span class="token operator">-&gt;</span>name<span class="token punctuation">;</span>
+    new_driver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>bus <span class="token operator">=</span> <span class="token operator">&amp;</span>usb_bus_type<span class="token punctuation">;</span>
+    new_driver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>probe <span class="token operator">=</span> usb_probe_interface<span class="token punctuation">;</span>
+    new_driver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>remove <span class="token operator">=</span> usb_unbind_interface<span class="token punctuation">;</span>
+    new_driver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>owner <span class="token operator">=</span> owner<span class="token punctuation">;</span>
+    new_driver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>mod_name <span class="token operator">=</span> mod_name<span class="token punctuation">;</span>
+    <span class="token function">spin_lock_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>new_driver<span class="token operator">-&gt;</span>dynids<span class="token punctuation">.</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">INIT_LIST_HEAD</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>new_driver<span class="token operator">-&gt;</span>dynids<span class="token punctuation">.</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    retval <span class="token operator">=</span> <span class="token function">driver_register</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>new_driver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> out<span class="token punctuation">;</span> 
+
+    retval <span class="token operator">=</span> <span class="token function">usb_create_newid_files</span><span class="token punctuation">(</span>new_driver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>retval<span class="token punctuation">)</span>
+        <span class="token keyword">goto</span> out_newid<span class="token punctuation">;</span>
+
+    <span class="token function">pr_info</span><span class="token punctuation">(</span><span class="token string">&quot;%s: registered new interface driver %s\n&quot;</span><span class="token punctuation">,</span>
+            usbcore_name<span class="token punctuation">,</span> new_driver<span class="token operator">-&gt;</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+out<span class="token punctuation">:</span>
+    <span class="token keyword">return</span> retval<span class="token punctuation">;</span>
+
+out_newid<span class="token punctuation">:</span>
+    <span class="token function">driver_unregister</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>new_driver<span class="token operator">-&gt;</span>drvwrap<span class="token punctuation">.</span>driver<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">printk</span><span class="token punctuation">(</span>KERN_ERR <span class="token string">&quot;%s: error %d registering interface &quot;</span>
+            <span class="token string">&quot;   driver %s\n&quot;</span><span class="token punctuation">,</span>
+            usbcore_name<span class="token punctuation">,</span> retval<span class="token punctuation">,</span> new_driver<span class="token operator">-&gt;</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">goto</span> out<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+&#x6267;&#x884C;&#x5339;&#x914D;
+<span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">usb_probe_interface</span><span class="token punctuation">(</span><span class="token keyword">struct</span> device <span class="token operator">*</span>dev<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    error <span class="token operator">=</span> driver<span class="token operator">-&gt;</span><span class="token function">probe</span><span class="token punctuation">(</span>intf<span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="mailto:zhoushiqian@gmail.com" target="_blank">zhoushiqian@gmail.com</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2018-11-02 11:24:13 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="driver.html" class="navigation navigation-prev " aria-label="Previous page: 5.Android Driver开发">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="system.html" class="navigation navigation-next " aria-label="Next page: 6.Android System开发">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.1 usb host driver","level":"1.5.1","depth":2,"next":{"title":"6.Android System开发","level":"1.6","depth":1,"path":"android/system.md","ref":"android/system.md","articles":[]},"previous":{"title":"5.Android Driver开发","level":"1.5","depth":1,"path":"android/driver.md","ref":"android/driver.md","articles":[{"title":"5.1 usb host driver","level":"1.5.1","depth":2,"path":"android/driver_1.md","ref":"android/driver_1.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-disqus","sharing-plus","search-pro","page-footer-ex","donate","-highlight","prism","prism-themes"],"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-dark.css"]},"disqus":{"shortName":"introducetogitbook"},"page-footer-ex":{"copyright":"By <zhoushiqian@gmail.com>，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"Donate","title":"","wechat":"/images/wechat.png","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"prism-themes":{},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","qq","linkedin","qzone","douban"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/driver_1.md","mtime":"2018-11-02T03:24:13.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-02T03:35:12.810Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
